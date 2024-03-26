@@ -11,6 +11,12 @@
 		0F4C6FD22B703AAA00ACC800 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C6FD12B703AAA00ACC800 /* ContentView.swift */; };
 		0F4C6FD42B703AAA00ACC800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FD32B703AAA00ACC800 /* Assets.xcassets */; };
 		0F4C6FD72B703AAA00ACC800 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FD62B703AAA00ACC800 /* Preview Assets.xcassets */; };
+		0F4C6FDE2B703AF800ACC800 /* GameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C6FDD2B703AF800ACC800 /* GameMenuView.swift */; };
+		0F4C6FE02B703B5900ACC800 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C6FDF2B703B5900ACC800 /* Components.swift */; };
+		0F4C6FE22B703C0E00ACC800 /* DatabaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C6FE12B703C0E00ACC800 /* DatabaseFunctions.swift */; };
+		0F4C6FE42B703C3A00ACC800 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C6FE32B703C3A00ACC800 /* GameScene.swift */; };
+		0F4C6FE62B703C9000ACC800 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FE52B703C9000ACC800 /* Launch Screen.storyboard */; };
+		0F4C6FEB2B703DC100ACC800 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		0F4C6FD12B703AAA00ACC800 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0F4C6FD32B703AAA00ACC800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F4C6FD62B703AAA00ACC800 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0F4C6FDD2B703AF800ACC800 /* GameMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuView.swift; sourceTree = "<group>"; };
+		0F4C6FDF2B703B5900ACC800 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		0F4C6FE12B703C0E00ACC800 /* DatabaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseFunctions.swift; sourceTree = "<group>"; };
+		0F4C6FE32B703C3A00ACC800 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		0F4C6FE52B703C9000ACC800 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0F4C6FE72B703CA800ACC800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,15 @@
 		0F4C6FCE2B703AAA00ACC800 /* Spacematic */ = {
 			isa = PBXGroup;
 			children = (
+				0F4C6FE72B703CA800ACC800 /* Info.plist */,
 				0F4C6FCF2B703AAA00ACC800 /* SpacematicApp.swift */,
 				0F4C6FD12B703AAA00ACC800 /* ContentView.swift */,
+				0F4C6FDD2B703AF800ACC800 /* GameMenuView.swift */,
+				0F4C6FE12B703C0E00ACC800 /* DatabaseFunctions.swift */,
+				0F4C6FDF2B703B5900ACC800 /* Components.swift */,
+				0F4C6FE32B703C3A00ACC800 /* GameScene.swift */,
+				0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */,
+				0F4C6FE52B703C9000ACC800 /* Launch Screen.storyboard */,
 				0F4C6FD32B703AAA00ACC800 /* Assets.xcassets */,
 				0F4C6FD52B703AAA00ACC800 /* Preview Content */,
 			);
@@ -125,8 +145,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F4C6FE62B703C9000ACC800 /* Launch Screen.storyboard in Resources */,
 				0F4C6FD72B703AAA00ACC800 /* Preview Assets.xcassets in Resources */,
 				0F4C6FD42B703AAA00ACC800 /* Assets.xcassets in Resources */,
+				0F4C6FEB2B703DC100ACC800 /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F4C6FE42B703C3A00ACC800 /* GameScene.swift in Sources */,
+				0F4C6FDE2B703AF800ACC800 /* GameMenuView.swift in Sources */,
+				0F4C6FE22B703C0E00ACC800 /* DatabaseFunctions.swift in Sources */,
+				0F4C6FE02B703B5900ACC800 /* Components.swift in Sources */,
 				0F4C6FD22B703AAA00ACC800 /* ContentView.swift in Sources */,
 				0F4C6FD02B703AAA00ACC800 /* SpacematicApp.swift in Sources */,
 			);
@@ -264,17 +290,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Spacematic/Preview Content\"";
 				DEVELOPMENT_TEAM = RBCMA58JC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Spacematic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Spacematic;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,9 +312,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = CAGM.Spacematic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -293,17 +326,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Spacematic/Preview Content\"";
 				DEVELOPMENT_TEAM = RBCMA58JC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Spacematic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Spacematic;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +348,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = CAGM.Spacematic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

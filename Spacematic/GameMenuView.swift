@@ -26,9 +26,16 @@ struct GameMenuView: View {
         return scene
     }()
     @State private var showingSheet = false
+    @State private var isScaled = false
 
     
     @State var gameIsInProgress = false
+    
+    
+    @State private var isVisible = false
+    
+    
+    
     //@State var gameIsOver = false
     
     @State var gameOverTextY = -300
@@ -44,15 +51,14 @@ struct GameMenuView: View {
     @State var backColorM1: Color = Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1)
     @State var backColorM2: Color = .clear
     
-    @State var restart = false
-    
+
     var body: some View {
         //VStack {
             ZStack {
                 Color(red: 0.35, green: 0.25, blue: 0.45, opacity: 1.0)
                     .ignoresSafeArea(.all)
                 
-                if gameIsInProgress || restart {
+                if gameIsInProgress {
                     VStack {
 
                         //SpriteView(scene: scene, debugOptions : [.showsFPS,.showsNodeCount])
@@ -79,13 +85,20 @@ struct GameMenuView: View {
                         VStack {
                             Spacer()
                             //GADBannerViewController()
-                            Text("Best Score : \(String(select()!))")
-                                .font(.custom("Arial", size: 45))
+                            Text("Spacematic")
+                                .font(.custom("Arial", size: 40))
                                 .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
                                 .fontWeight(.bold)
                                 .padding()
+                                .scaleEffect(isScaled ? 1.0 : 1.1)
+                                        // Animate the scale effect with a duration and repeat it forever with an autoreverse
+                                .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: isScaled)
+                                        // Trigger the animation when the view appears
+                                .onAppear {
+                                            isScaled = true
+                                }
                             //.font(Futura)
-                            
+                            Spacer()
                             Button {
                                 if backColorD1 == Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1) {
                                     scene.difficulty = "easy"
@@ -102,41 +115,40 @@ struct GameMenuView: View {
                                 } else if backColorM2 == Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1) {
                                     scene.gameMode = "geography"
                                 }
-                                gameIsInProgress = true
                                 gameOverTextY = -1000
+                                //gameIsInProgress = true
+                                Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in
+                                    
+                                    
+                                    gameIsInProgress = true
+                                }
+                                
+                                
                             } label: {
+                                
                                 Image(systemName: "play.circle")
                                     .resizable()
-                                    .frame(width: 170, height: 170)
+                                    .frame(width: 150, height: 150)
                                     .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
-                                    .padding()
+                                    //.padding()
+                                // Apply the scale effect based on the isScaled state variable
+                                    .scaleEffect(isScaled ? 1.1 : 1.0)
+                                            // Animate the scale effect with a duration and repeat it forever with an autoreverse
+                                    .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: isScaled)
+                                            // Trigger the animation when the view appears
+                                    .onAppear {
+                                                isScaled = true
+                                    }
                             }
                             //Text(generateProblem(difficulty: "hard").0)
-                            
-                            
-                            DifficultyBarView(backColorD1: $backColorD1, backColorD2: $backColorD2, backColorD3: $backColorD3).padding()
-                            /*GameModeBarView(backColorM1: $backColorM1, backColorM2: $backColorM2).padding()BETA*/
-                            Spacer(minLength: 50)
-                            
-                            Button {
-                                showingSheet.toggle()
-                            } label: {
-                                ZStack {
-                                    Image(systemName: "circle.fill")
-                                        .resizable()
-                                        .frame(width: 80, height: 80)
-                                        .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
-                                        .padding()
-                                    Image(systemName: "book.circle.fill")
-                                        .resizable()
-                                        .frame(width: 70, height: 70)
-                                        .foregroundColor(.purple)
-                                        .padding()
-                                }
-                            }
-                            .sheet(isPresented: $showingSheet) {
-                                bookView(showingSheet: $showingSheet)
-                            }
+
+                            VStack {
+                                DifficultyBarView(backColorD1: $backColorD1, backColorD2: $backColorD2, backColorD3: $backColorD3)
+                                
+                                GameModeBarView(backColorM1: $backColorM1, backColorM2: $backColorM2)
+                            }.padding(50)
+                            Spacer(minLength: 100)
+
                             
                         }
                         /*VStack {
@@ -193,6 +205,30 @@ struct GameMenuView: View {
                              }BETA*/
                             
                         }*/
+                        VStack {
+                        
+                            Spacer()
+                            
+                            Button {
+                                showingSheet.toggle()
+                            } label: {
+                                ZStack {
+                                    Image(systemName: "circle.fill")
+                                        .resizable()
+                                        .frame(width: 80, height: 80)
+                                        .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
+                                        .padding()
+                                    Image(systemName: "book.circle.fill")
+                                        .resizable()
+                                        .frame(width: 70, height: 70)
+                                        .foregroundColor(.purple)
+                                        .padding()
+                                }
+                                .padding()
+                            }
+                            .sheet(isPresented: $showingSheet) {
+                                bookView(showingSheet: $showingSheet)
+                            }}.padding(15)
                     } .frame(width: 560, height: 830-120)
                 }
                 if gameIsInProgress && scene.gameIsOver {
@@ -204,14 +240,49 @@ struct GameMenuView: View {
                         //.position(x: 200, y: CGFloat(gameOverTextY))
                         
                         VStack {
-                            Text("GAME OVER")
-                                .fontWeight(.bold)
+                            Text("Game Over")
+                                
+                                .font(.custom("Arial", size: 30)).fontWeight(.bold)
+                                
                             /*.onAppear() {
                              textGameOverMove()
                              }*/
                             
                                 .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
-                            
+                                .padding()
+                            Text("Score : " + String(scene.score))
+                                .font(.custom("Arial", size: 30)).fontWeight(.bold).foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
+                            Text("Best : \(String(select(gameMode: scene.gameMode)!))")
+                                .font(.custom("Arial", size: 30))
+                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
+                                .fontWeight(.bold)
+                                .padding()
+                            Button {
+                                
+                                    
+                                    gameIsInProgress = false
+                                    scene.gameIsOver = false
+                                    isScaled = false
+                                    
+                                    scene.score = 0
+                                    
+                                    //restart game bugs
+                                
+                            } label :{
+                                Image(systemName: "arrow.counterclockwise.circle")
+                                    .resizable()
+                                    .frame(width: 90, height: 90)
+                                    .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
+                                    .padding()
+                                    .scaleEffect(isScaled ? 1.0 : 1.1)
+                                            // Animate the scale effect with a duration and repeat it forever with an autoreverse
+                                    .animation(.easeInOut(duration: 0.5).repeatForever(autoreverses: true), value: isScaled)
+                                            // Trigger the animation when the view appears
+                                    .onAppear {
+                                        isScaled = false
+                                    }
+                            }
+                               
                             /*Text("Restart")
                              .fontWeight(.bold)
                              /*.onAppear() {
@@ -233,16 +304,13 @@ struct GameMenuView: View {
                         }
                         
                     }
-                    .animation(.easeInOut, value: true)
-                    .onTapGesture {
-                        restart = false
-                        gameIsInProgress = false
-                        scene.gameIsOver = false
-                        
-                        scene.score = 0
-                        
-                        //restart game bugs
+                    .opacity(isVisible ? 1 : 0) // Start invisible, fade in to full opacity
+                    .onAppear {
+                        withAnimation(.easeInOut(duration: 0.1)) {
+                            isVisible = true
+                        }
                     }
+                    
                 }
             }
             //AdView()
@@ -309,110 +377,143 @@ struct bookView: View {
                 .padding()
                 Spacer()
                 ScrollView {
-                    
-                    Button {
-                        showingSheet1.toggle()
-                    } label: {
-                    
+                    VStack {
+                        
+                        
+                        let columns: [GridItem] = [
+                            GridItem(.flexible(), spacing: 0),
+                            GridItem(.flexible(), spacing: 0)
+                        ]
+
+                        LazyVGrid(columns: columns, alignment: .leading, spacing: 0) {
+                            // Column Headers
+                            Group {
+                                Text("Game mode")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, alignment: .center)
+                                    //.background(Color.gray.opacity(0.2))
+                                    .border(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0), width: 2)
+                                    .font(.custom("Arial", size: 20))
+                                    .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                    .fontWeight(.bold)
+                                
+                                
+                                Text("Best score")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, alignment: .center)
+                                    //.background(Color.gray.opacity(0.2))
+                                    .border(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0), width: 2)
+                                    .font(.custom("Arial", size: 20))
+                                    .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                    .fontWeight(.bold)
+                                
+                            }
+
+                            // Data Rows
+                            Group {
+                                Text("Mental Maths")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, alignment: .center)
+                                    //.background(Color.gray.opacity(0.2))
+                                    .border(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0), width: 2)
+                                    .font(.custom("Arial", size: 20))
+                                    .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                    .fontWeight(.bold)
+                                
+                                Text(String(select(gameMode: "maths")!))
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, alignment: .center)
+                                    //.background(Color.gray.opacity(0.2))
+                                    .border(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0), width: 2)
+                                    .font(.custom("Arial", size: 25))
+                                    .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                    .fontWeight(.bold)
+                            }
+
+                            Group {
+                                Text("Geography")
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, alignment: .center)
+                                    //.background(Color.gray.opacity(0.2))
+                                    .border(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0), width: 2)
+                                    .font(.custom("Arial", size: 20))
+                                    .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                    .fontWeight(.bold)
+                                
+                                Text(String(select(gameMode: "geography")!))
+                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50, alignment: .center)
+                                    //.background(Color.gray.opacity(0.2))
+                                    .border(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0), width: 2)
+                                    .font(.custom("Arial", size: 25))
+                                    .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                    .fontWeight(.bold)
+                            }
+                        
+                    }.padding()
+                            
+                        Text(" ").font(.custom("Arial",size:50))
+                        
                         ZStack {
                             Rectangle()
-                                .frame(width: 350, height: 50)
+                                .frame(width: 350, height: 40)
                                 .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
                                 .cornerRadius(30)
                             
-                                
+                            
                             Rectangle()
-                                .frame(width: 340, height: 40)
+                                .frame(width: 340, height: 35)
                                 .foregroundColor(Color(red: 0.4, green: 0.3, blue: 0.5, opacity: 1.0))
                                 .cornerRadius(30)
-                          
-                                
-                            Text("Privacy Policy")
-                                .font(.custom("Arial", size: 30))
+                            
+                            
+                            Link("Privacy Policy", destination: URL(string: "https://www.spacematic.co/privacy.html")!)
+                                .font(.custom("Arial", size: 25))
                                 .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
                                 .fontWeight(.bold)
                         }
-                    }
-                    .sheet(isPresented: $showingSheet1) {
+
                         ZStack {
-                            Color(red: 0.4, green: 0.3, blue: 0.5, opacity: 1.0)
-                                .ignoresSafeArea(.all)
-                            VStack {
-                                Button {
-                                    showingSheet1 = false
-                                } label: {
-                                    Text("Done")
-                                        .font(.custom("Arial", size: 20))
-                                        .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))
-                                        .fontWeight(.bold)
-                                        .padding()
-                                }
-                                .padding()
-                                Spacer()
-                                ScrollView {
-                                    
-                                    Text("""
-                                                    Privacy Policy for Spacematic
-
-                                                    Last updated: March 7, 2024.
-
-                                                    Welcome to Spacematic, a mental math game designed to challenge and improve your arithmetic skills. We take your privacy seriously and are committed to protecting it. This privacy policy outlines the types of information we may process when you use our Spacematic app, as well as the steps we take to protect and secure this information.
-
-                                                    Information We Do Not Collect
-                                                    Spacematic is designed to respect your privacy. As such, we do not collect or store any personal information from our users. Our app does not require users to provide personal data, such as names, email addresses, or other contact information, and we do not track or monitor users' activity for any purposes beyond the app's core functionality.
-
-                                                    Local Storage of Data
-                                                    The only data Spacematic stores is the best score achieved by the user, which is saved locally on the user's device through an SQLite database. This information is not backed up, shared, or accessible outside of the app. It is used solely to enhance the user experience by keeping track of the user's personal best score within the game.
-
-                                                    No Third-Party Services
-                                                    Spacematic does not use any third-party services that may collect information from our users. Our app operates independently, ensuring that users' gameplay and performance data remain private and are not shared externally.
-
-                                                    Security
-                                                    We are committed to ensuring that your information is secure. Since Spacematic stores very minimal data locally on your device, the risk of data breaches is significantly reduced. We encourage users to keep their devices and applications updated to further enhance security.
-
-                                                    Changes to This Privacy Policy
-                                                    We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
-
-                                                    Contact Us
-                                                    As Spacematic does not collect contact information, we do not offer a direct line of communication for privacy concerns. However, we encourage users to review Apple's standard support channels for any concerns related to app privacy and security.
-                                                    """).foregroundColor(.white)
-                                                .padding()
-                                            }
-                            }
+                            Rectangle()
+                                .frame(width: 350, height: 40)
+                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                .cornerRadius(30)
+                            
+                            
+                            Rectangle()
+                                .frame(width: 340, height: 35)
+                                .foregroundColor(Color(red: 0.4, green: 0.3, blue: 0.5, opacity: 1.0))
+                                .cornerRadius(30)
+                            
+                            Link("Terms of use", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
+                                .font(.custom("Arial", size: 25))
+                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                .fontWeight(.bold)
+                            
                         }
-                    
+                        
+
+                        
+                        
+                        
+                        
+                        VStack {
+                            Spacer()
+                            
+                            
+                            Text("Made by : Charles-A. Gravier Morin")
+                                .font(.custom("Arial", size: 15))
+                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 0.8))
+                                .fontWeight(.bold)
+                                
+                            
+                            Text("Music : Thomas Mosen")
+                                .font(.custom("Arial", size: 15))
+                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 0.8))
+                                .fontWeight(.bold)
+                            Text("Copyright © 2024. Version 1.2.")
+                                .font(.custom("Arial", size: 20))
+                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
+                                .fontWeight(.bold)
+                                .padding(5)
+                            
+                        }
                         
                     }
-                    
-                    ZStack {
-                        Rectangle()
-                            .frame(width: 350, height: 50)
-                            .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
-                            .cornerRadius(30)
-                        
-                        
-                        Rectangle()
-                            .frame(width: 340, height: 40)
-                            .foregroundColor(Color(red: 0.4, green: 0.3, blue: 0.5, opacity: 1.0))
-                            .cornerRadius(30)
-                          
-                        Link("Terms of use", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
-                            .font(.custom("Arial", size: 30))
-                            .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
-                            .fontWeight(.bold)
-                    
-                    }
-                        
-                    
-                    
-                    
-                    
-                    Text("Copyright © 2024. Version 1.0.")
-                        .font(.custom("Arial", size: 15))
-                        .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 0.8))
-                        .fontWeight(.bold)
-                        .padding()
-                    
                 }
             }
         }

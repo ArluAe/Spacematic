@@ -18,7 +18,7 @@ var dbQueue: OpaquePointer!
 var dataBaseURL = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         dbQueue = createAndOpenDataBase()
@@ -91,6 +91,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
     func insert0(data: String) {
         let insertStatementString = "INSERT INTO Data (BestScore) VALUES (?);"
+        let insertStatementString2 = "INSERT INTO Data (BestScore) VALUES (?);"
         var insertStatement: OpaquePointer?
         // 1
         if sqlite3_prepare_v2(dbQueue, insertStatementString, -1, &insertStatement, nil) ==
@@ -105,6 +106,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             }
         } else {
             print("\nINSERT statement is not prepared.")
+        }
+        sqlite3_finalize(insertStatement)
+        
+        if sqlite3_prepare_v2(dbQueue, insertStatementString2, -1, &insertStatement, nil) ==
+            SQLITE_OK {
+            let minScore: Int32 = 0
+            sqlite3_bind_int(insertStatement, 1, minScore)
+
+            if sqlite3_step(insertStatement) == SQLITE_DONE {
+                print("\nSuccessfully inserted row.2")
+            } else {
+                print("\nCould not insert row.2")
+            }
+        } else {
+            print("\nINSERT statement is not prepared.2")
         }
         sqlite3_finalize(insertStatement)
     }

@@ -17,6 +17,9 @@
 		0F4C6FE42B703C3A00ACC800 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C6FE32B703C3A00ACC800 /* GameScene.swift */; };
 		0F4C6FE62B703C9000ACC800 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FE52B703C9000ACC800 /* Launch Screen.storyboard */; };
 		0F4C6FEB2B703DC100ACC800 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */; };
+		0FD6BAFB2BC5F20E00406181 /* ProblemGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFA2BC5F20E00406181 /* ProblemGeneration.swift */; };
+		0FD6BAFD2BC736B300406181 /* BackgroundMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFC2BC736B300406181 /* BackgroundMusicManager.swift */; };
+		0FD6BAFF2BC7370E00406181 /* sonpourcharles.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFE2BC7370E00406181 /* sonpourcharles.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		0F4C6FE52B703C9000ACC800 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0F4C6FE72B703CA800ACC800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		0FD6BAFA2BC5F20E00406181 /* ProblemGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGeneration.swift; sourceTree = "<group>"; };
+		0FD6BAFC2BC736B300406181 /* BackgroundMusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicManager.swift; sourceTree = "<group>"; };
+		0FD6BAFE2BC7370E00406181 /* sonpourcharles.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sonpourcharles.wav; path = ../../../Downloads/sonpourcharles.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +73,11 @@
 				0F4C6FE72B703CA800ACC800 /* Info.plist */,
 				0F4C6FCF2B703AAA00ACC800 /* SpacematicApp.swift */,
 				0F4C6FD12B703AAA00ACC800 /* ContentView.swift */,
+				0FD6BAFE2BC7370E00406181 /* sonpourcharles.wav */,
 				0F4C6FDD2B703AF800ACC800 /* GameMenuView.swift */,
 				0F4C6FE12B703C0E00ACC800 /* DatabaseFunctions.swift */,
+				0FD6BAFC2BC736B300406181 /* BackgroundMusicManager.swift */,
+				0FD6BAFA2BC5F20E00406181 /* ProblemGeneration.swift */,
 				0F4C6FDF2B703B5900ACC800 /* Components.swift */,
 				0F4C6FE32B703C3A00ACC800 /* GameScene.swift */,
 				0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */,
@@ -146,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F4C6FE62B703C9000ACC800 /* Launch Screen.storyboard in Resources */,
+				0FD6BAFF2BC7370E00406181 /* sonpourcharles.wav in Resources */,
 				0F4C6FD72B703AAA00ACC800 /* Preview Assets.xcassets in Resources */,
 				0F4C6FD42B703AAA00ACC800 /* Assets.xcassets in Resources */,
 				0F4C6FEB2B703DC100ACC800 /* MyParticle.sks in Resources */,
@@ -160,7 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F4C6FE42B703C3A00ACC800 /* GameScene.swift in Sources */,
+				0FD6BAFB2BC5F20E00406181 /* ProblemGeneration.swift in Sources */,
 				0F4C6FDE2B703AF800ACC800 /* GameMenuView.swift in Sources */,
+				0FD6BAFD2BC736B300406181 /* BackgroundMusicManager.swift in Sources */,
 				0F4C6FE22B703C0E00ACC800 /* DatabaseFunctions.swift in Sources */,
 				0F4C6FE02B703B5900ACC800 /* Components.swift in Sources */,
 				0F4C6FD22B703AAA00ACC800 /* ContentView.swift in Sources */,
@@ -291,33 +303,37 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Spacematic/Preview Content\"";
-				DEVELOPMENT_TEAM = RBCMA58JC3;
+				DEVELOPMENT_TEAM = PR275K8GK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spacematic/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Spacematic;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = CAGM.Spacematic;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = charles.andrea.spacematic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,3";
 			};
 			name = Debug;
 		};
@@ -327,33 +343,37 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Spacematic/Preview Content\"";
-				DEVELOPMENT_TEAM = RBCMA58JC3;
+				DEVELOPMENT_TEAM = PR275K8GK8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spacematic/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Spacematic;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.educational-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = CAGM.Spacematic;
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = charles.andrea.spacematic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,3";
 			};
 			name = Release;
 		};

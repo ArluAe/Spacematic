@@ -33,6 +33,7 @@ var starSize = CGSize()
     // Color
 var offBlackColor = UIColor(red: 0.35, green: 0.25, blue: 0.45, alpha: 1.0)
 var offWhiteColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
+
 var greenColor = UIColor(red: 0.7, green: 1.0, blue: 0.2, alpha: 1)
 var orangeCustomColor = UIColor.orange
     // Time Intervals

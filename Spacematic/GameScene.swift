@@ -42,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         nodesSpawnRate = 7
         nodesSpeed = 6.6
         fireProjectileRate = 0.3
-        enemySpawnRate = 1
+        enemySpawnRate = 1.3
         
         if(gameMode == "geography") {
             answerLabel = CGFloat(25)
@@ -620,7 +620,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         player.position = CGPoint(x: CGRectGetMidX(self.frame), y: -300)
         player.zPosition = CGFloat(10)
         
-        player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
+        player.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: player.size.width-20, height: player.size.height))
         player.physicsBody!.affectedByGravity = false
         player.physicsBody!.categoryBitMask = physicsCategory.player
         player.physicsBody!.collisionBitMask = physicsCategory.enemy // Collide with enemy
@@ -687,9 +687,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         
         enemy.position = CGPoint(x: randomX, y: screenHeight+90)
         enemy.zPosition = CGFloat(2)
+        //TODO
         
-        
-        enemy.physicsBody = SKPhysicsBody(circleOfRadius: min(CGFloat(randomSize1),CGFloat(randomSize2))-25)
+        enemy.physicsBody = SKPhysicsBody(circleOfRadius: min(CGFloat(randomSize1),CGFloat(randomSize2))-30)
         enemy.physicsBody!.affectedByGravity = false
         enemy.physicsBody!.categoryBitMask = physicsCategory.enemy
         enemy.physicsBody!.collisionBitMask = physicsCategory.player | physicsCategory.projectile // Collide with player and projectile
@@ -725,7 +725,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
         starSize = CGSize(width: randomSize, height: randomSize)
         
         star = SKShapeNode(circleOfRadius: CGFloat(randomSize))
-        star.fillColor = offWhiteColor
+        star.fillColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: CGFloat(Float.random(in: 0.1...0.8)))
         //star = SKSpriteNode(color: offWhiteColor, size: starSize)
         //star.size = starSize
         star.position = CGPoint(x: randomX, y: 1000)
@@ -758,7 +758,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     func spawnMainLabel() {
         
         mainLabel = SKLabelNode(fontNamed: "Futura")
-        mainLabel.fontSize = 60
+        mainLabel.fontSize = 45
         mainLabel.fontColor = offWhiteColor
         mainLabel.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMidY(frame) + 200)
         mainLabel.zPosition = 8
@@ -796,7 +796,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, ObservableObject {
     }
     
     func timerSpawnStars() {
-        let wait = SKAction.wait(forDuration: 0.08)
+        let wait = SKAction.wait(forDuration: 0.12)
         
         let spawn = SKAction.run {
             if self.isAlive {

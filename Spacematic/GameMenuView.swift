@@ -10,6 +10,15 @@ import SwiftUI
 import _SpriteKit_SwiftUI
 
 struct GameMenuView: View {
+    
+
+        @State private var score1 = 0
+        @State private var score2 = 0
+
+     
+    
+    
+    
     //@State var realID1 = "ca-app-pub-3510970014586940/9557659032"
     //@State var realID2 = ""
     /*private let banner: GADBannerView = {
@@ -60,6 +69,7 @@ struct GameMenuView: View {
                 
                 if gameIsInProgress {
                     VStack {
+                        
 
                         //SpriteView(scene: scene, debugOptions : [.showsFPS,.showsNodeCount])
                         SpriteView(scene: scene)
@@ -83,6 +93,9 @@ struct GameMenuView: View {
                         }
                         
                         VStack {
+                            
+                            
+                            
                             Spacer()
                             //GADBannerViewController()
                             Text("Spacematic")
@@ -446,50 +459,6 @@ struct bookView: View {
                         
                     }.padding()
                             
-                        Text(" ").font(.custom("Arial",size:50))
-                        
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 350, height: 40)
-                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
-                                .cornerRadius(30)
-                            
-                            
-                            Rectangle()
-                                .frame(width: 340, height: 35)
-                                .foregroundColor(Color(red: 0.4, green: 0.3, blue: 0.5, opacity: 1.0))
-                                .cornerRadius(30)
-                            
-                            
-                            Link("Privacy Policy", destination: URL(string: "https://www.spacematic.co/privacy.html")!)
-                                .font(.custom("Arial", size: 25))
-                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
-                                .fontWeight(.bold)
-                        }
-
-                        ZStack {
-                            Rectangle()
-                                .frame(width: 350, height: 40)
-                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
-                                .cornerRadius(30)
-                            
-                            
-                            Rectangle()
-                                .frame(width: 340, height: 35)
-                                .foregroundColor(Color(red: 0.4, green: 0.3, blue: 0.5, opacity: 1.0))
-                                .cornerRadius(30)
-                            
-                            Link("Terms of use", destination: URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/")!)
-                                .font(.custom("Arial", size: 25))
-                                .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
-                                .fontWeight(.bold)
-                            
-                        }
-                        
-
-                        
-                        
-                        
                         
                         VStack {
                             Spacer()
@@ -505,7 +474,7 @@ struct bookView: View {
                                 .font(.custom("Arial", size: 15))
                                 .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 0.8))
                                 .fontWeight(.bold)
-                            Text("Copyright © 2024. Version 1.2.")
+                            Text("Copyright © 2024. Version 2.0.")
                                 .font(.custom("Arial", size: 20))
                                 .foregroundColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1.0))
                                 .fontWeight(.bold)

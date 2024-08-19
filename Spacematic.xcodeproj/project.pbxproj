@@ -17,6 +17,7 @@
 		0F4C6FE42B703C3A00ACC800 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4C6FE32B703C3A00ACC800 /* GameScene.swift */; };
 		0F4C6FE62B703C9000ACC800 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FE52B703C9000ACC800 /* Launch Screen.storyboard */; };
 		0F4C6FEB2B703DC100ACC800 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */; };
+		0F813F2B2C729A5E008C7748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F813F292C729A5E008C7748 /* Assets.xcassets */; };
 		0FD6BAFB2BC5F20E00406181 /* ProblemGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFA2BC5F20E00406181 /* ProblemGeneration.swift */; };
 		0FD6BAFD2BC736B300406181 /* BackgroundMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFC2BC736B300406181 /* BackgroundMusicManager.swift */; };
 		0FD6BAFF2BC7370E00406181 /* sonpourcharles.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFE2BC7370E00406181 /* sonpourcharles.wav */; };
@@ -35,6 +36,7 @@
 		0F4C6FE52B703C9000ACC800 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		0F4C6FE72B703CA800ACC800 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		0F813F292C729A5E008C7748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FD6BAFA2BC5F20E00406181 /* ProblemGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGeneration.swift; sourceTree = "<group>"; };
 		0FD6BAFC2BC736B300406181 /* BackgroundMusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicManager.swift; sourceTree = "<group>"; };
 		0FD6BAFE2BC7370E00406181 /* sonpourcharles.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sonpourcharles.wav; path = ../../../Downloads/sonpourcharles.wav; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		0F4C6FC32B703AAA00ACC800 = {
 			isa = PBXGroup;
 			children = (
+				0F813F292C729A5E008C7748 /* Assets.xcassets */,
 				0F4C6FCE2B703AAA00ACC800 /* Spacematic */,
 				0F4C6FCD2B703AAA00ACC800 /* Products */,
 			);
@@ -155,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F4C6FE62B703C9000ACC800 /* Launch Screen.storyboard in Resources */,
+				0F813F2B2C729A5E008C7748 /* Assets.xcassets in Resources */,
 				0FD6BAFF2BC7370E00406181 /* sonpourcharles.wav in Resources */,
 				0F4C6FD72B703AAA00ACC800 /* Preview Assets.xcassets in Resources */,
 				0F4C6FD42B703AAA00ACC800 /* Assets.xcassets in Resources */,
@@ -303,9 +307,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Spacematic/Spacematic.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Spacematic/Preview Content\"";
 				DEVELOPMENT_TEAM = PR275K8GK8;
 				ENABLE_PREVIEWS = YES;
@@ -317,23 +322,24 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = charles.andrea.spacematic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,3";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -343,9 +349,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = Spacematic/Spacematic.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Spacematic/Preview Content\"";
 				DEVELOPMENT_TEAM = PR275K8GK8;
 				ENABLE_PREVIEWS = YES;
@@ -357,23 +364,24 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = charles.andrea.spacematic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,3";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

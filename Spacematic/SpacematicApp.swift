@@ -131,8 +131,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct MathemaApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            
+            ContentView().onAppear {
+                BackgroundMusicManager.shared.startBackgroundMusic()
+            }
         }
     }
 }

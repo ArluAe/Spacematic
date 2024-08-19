@@ -34,11 +34,11 @@ struct ContentView: View {
 
             }
             .accentColor(Color(red: 0.7, green: 1.0, blue: 0.2, opacity: 1))*/
-    }.onAppear {
+    }/*.onAppear {
         
         //BackgroundMusicManager.shared.setupAudioSession()
         BackgroundMusicManager.shared.startBackgroundMusic()
-        }
+        }*/
     }
 }
 

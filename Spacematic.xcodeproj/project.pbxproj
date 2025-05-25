@@ -19,9 +19,9 @@
 		0F4C6FEB2B703DC100ACC800 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */; };
 		0F5F68062CDAD9A900698CFA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0F5F68052CDAD9A400698CFA /* README.md */; };
 		0F813F2B2C729A5E008C7748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F813F292C729A5E008C7748 /* Assets.xcassets */; };
+		0FBB50E02DE3C0AB0016E6AE /* sonpourcharles.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0FBB50DF2DE3C0AB0016E6AE /* sonpourcharles.wav */; };
 		0FD6BAFB2BC5F20E00406181 /* ProblemGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFA2BC5F20E00406181 /* ProblemGeneration.swift */; };
 		0FD6BAFD2BC736B300406181 /* BackgroundMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFC2BC736B300406181 /* BackgroundMusicManager.swift */; };
-		0FD6BAFF2BC7370E00406181 /* sonpourcharles.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0FD6BAFE2BC7370E00406181 /* sonpourcharles.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +39,9 @@
 		0F4C6FEA2B703DC100ACC800 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		0F5F68052CDAD9A400698CFA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0F813F292C729A5E008C7748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FBB50DF2DE3C0AB0016E6AE /* sonpourcharles.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sonpourcharles.wav; sourceTree = "<group>"; };
 		0FD6BAFA2BC5F20E00406181 /* ProblemGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemGeneration.swift; sourceTree = "<group>"; };
 		0FD6BAFC2BC736B300406181 /* BackgroundMusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicManager.swift; sourceTree = "<group>"; };
-		0FD6BAFE2BC7370E00406181 /* sonpourcharles.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sonpourcharles.wav; path = ../../../Downloads/sonpourcharles.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 				0F4C6FE72B703CA800ACC800 /* Info.plist */,
 				0F4C6FCF2B703AAA00ACC800 /* SpacematicApp.swift */,
 				0F4C6FD12B703AAA00ACC800 /* ContentView.swift */,
-				0FD6BAFE2BC7370E00406181 /* sonpourcharles.wav */,
+				0FBB50DF2DE3C0AB0016E6AE /* sonpourcharles.wav */,
 				0F4C6FDD2B703AF800ACC800 /* GameMenuView.swift */,
 				0F4C6FE12B703C0E00ACC800 /* DatabaseFunctions.swift */,
 				0FD6BAFC2BC736B300406181 /* BackgroundMusicManager.swift */,
@@ -162,10 +162,10 @@
 			files = (
 				0F4C6FE62B703C9000ACC800 /* Launch Screen.storyboard in Resources */,
 				0F813F2B2C729A5E008C7748 /* Assets.xcassets in Resources */,
-				0FD6BAFF2BC7370E00406181 /* sonpourcharles.wav in Resources */,
 				0F5F68062CDAD9A900698CFA /* README.md in Resources */,
 				0F4C6FD72B703AAA00ACC800 /* Preview Assets.xcassets in Resources */,
 				0F4C6FD42B703AAA00ACC800 /* Assets.xcassets in Resources */,
+				0FBB50E02DE3C0AB0016E6AE /* sonpourcharles.wav in Resources */,
 				0F4C6FEB2B703DC100ACC800 /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
